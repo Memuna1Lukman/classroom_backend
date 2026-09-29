@@ -1,14 +1,10 @@
-import express from 'express'
+import { eq } from 'drizzle-orm';
+import { db } from './db/db.js';
 
 
-const app = express()
-const port  = 8000
+async function main() {
+ 
+   
+}
 
-app.use(express.json());
-
-
-app.get("/",(req,res)=>{
-    res.send("Hello this is a an express server")
-})
-
-app.listen(port,()=>console.log(`server is running on http://localhost:${port}`))
+void main();
