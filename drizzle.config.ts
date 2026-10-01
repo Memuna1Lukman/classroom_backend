@@ -6,7 +6,7 @@ if (!process.env.DATABASE_URL_UNPOOLED) {
 }
 
 export default defineConfig({
-  schema: './src/schema.ts', // Your schema file path
+  schema: './src/db/schema/schema.ts',
   out: './drizzle', // Your migrations folder
   dialect: 'postgresql',
   dbCredentials: {
