@@ -6,7 +6,9 @@ import cors from "cors"
 import securityMiddleware from "./middleware/security.js";
 import { toNodeHandler } from "better-auth/node";
 import { auth } from "./lib/auth.js";
-
+import usersRouter from './routes/users.js';
+import { APIError } from "better-auth";
+import classesRouter from './routes/classes.js'
 
 const app = express();
 const PORT = 8000;
@@ -29,6 +31,8 @@ app.use(securityMiddleware)
 
 // Mounted route
 app.use('/api/subjects', subjectRouter);
+app.use("/api/users",usersRouter);
+app.use("/api/classes",classesRouter);
 
 app.get('/', (req, res) => {
     res.send("Hello, welcome to the classroom API!");
