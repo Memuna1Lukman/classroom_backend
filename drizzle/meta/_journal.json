@@ -8,6 +8,13 @@
       "when": 1790607630314,
       "tag": "0000_chief_genesis",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1790947747309,
+      "tag": "0001_fantastic_mojo",
+      "breakpoints": true
     }
   ]
 }
