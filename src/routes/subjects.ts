@@ -35,7 +35,7 @@ router.get("/", async (req: express.Request, res: express.Response) => {
    const countResult = await db
     .select({ total: sql<number>`count(*)::int` })
     .from(subjects)
-    .leftJoin(departments, eq(subjects.department_id, departments.id))
+    .leftJoin(departments, eq(subjects.departmentId, departments.id))
     .where(whereClause);
 
    const totalCount = countResult[0]?.total ?? 0;
@@ -51,9 +51,9 @@ router.get("/", async (req: express.Request, res: express.Response) => {
         },
     })
     .from(subjects)
-    .leftJoin(departments, eq(subjects.department_id, departments.id))
+    .leftJoin(departments, eq(subjects.departmentId, departments.id))
     .where(whereClause)
-    .orderBy(desc(subjects.created_at))
+    .orderBy(desc(subjects.createdAt))
     .limit(limitPerpage)
     .offset(offset);
 
